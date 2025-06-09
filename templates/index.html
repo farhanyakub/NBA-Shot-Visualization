@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>NBA Shot Charts</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="nav-h2">NBA Shot Data</h1>
+        </nav>
+        <i class="material-icons" id="basketball">sports_basketball</i>
+    </header>
+    <section class="about-us">
+        <div class="about">
+            <img src="../static/derrick_rose_shot.jpg" alt="Derrick Rose shot" class="pic">
+            <div class="about-us-text">
+                <h2>NBA Shot Data</h2>
+                <h5>Aspiring Data Analyst/Data Engineer</h5>
+                <p>I created this as a means to visualize some data that I had a hard time finding online. Currently, 
+                    I only have data from the 2000-01 season to the 2021-22 (until March) season. I'm working on getting 
+                    more updated data but for now, I'd like to thank techbaron13 on kaggle for this dataset. Enjoy making
+                    your charts!
+                </p>
+                <div class="about-us-link">
+                    <a href="" class="hire">About Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="form-container">
+            <h1 class="form-title">Query Options</h1>
+            <p class="form-message">
+                Everything is required. I'm working on getting more things to filter by but this is it for now.
+                Make sure your format for the time is the same as the placeholder. The default plot will be a Heatmap
+                unless otherwise specified.
+            </p>
+            <form id="query-form">
+                <div class="main-user-info">
+                    <div class="user-input-box">
+                        <label for="player">Player</label>
+                        <input type="text" id="player" placeholder="Enter Player Name*" required>
+                    </div>
+                    <div class="user-input-box">
+                        <label for="team">Team</label>
+                        <input type="text" id="team" placeholder="Enter Team Name*" required>
+                    </div>
+                    <div class="user-input-box">
+                        <label for="time">Time Remaining</label>
+                        <input type="text" id="time" placeholder="12:00.0*" required>
+                    </div>
+                    <div class="user-input-box">
+                        <label for="season">Season</label>
+                        <input type="text" id="season" placeholder="2000-01*" required>
+                    </div>
+                    <!-- <div class="user-input-box">
+                        <label for="month">Month</label>
+                        <input type="number" id="month" placeholder="12" required>
+                    </div>
+                    <div class="user-input-box">
+                        <label for="quarter">Quarter</label>
+                        <input type="number" id="quarter" placeholder="1" required>
+                    </div> -->
+                </div>
+                <div class="boolean-options">
+                    <span class="boolean-title location">Location</span>
+                    <div class="boolean-category">
+                        <input type="radio" name="location" id="hometeam" value="home">
+                        <label for="hometeam">Home Team</label>
+                        <input type="radio" name="location" id="awayteam" value="away">
+                        <label for="awayteam">Away Team</label>
+                        <input type="radio" name="location" id="bothteam" value="both">
+                        <label for="bothteam">Both</label>
+                    </div>
+                </div>
+                <div class="boolean-options">
+                    <span class="boolean-title shottype">Shot Type</span>
+                    <div class="boolean-category">
+                        <input type="radio" name="shottype" id="2point" value="2">
+                        <label for="2point">2 pointers</label>
+                        <input type="radio" name="shottype" id="3point" value="3">
+                        <label for="3point">3 pointers</label>
+                        <input type="radio" name="shottype" id="bothshot" value="both">
+                        <label for="bothshot">Both</label>
+                    </div>
+                </div>
+                <div class="boolean-options">
+                    <span class="boolean-title shotmade">Shot Made</span>
+                    <div class="boolean-category">
+                        <input type="radio" name="shotmade" id="shotmade" value="made">
+                        <label for="shotmade">Made</label>
+                        <input type="radio" name="shotmade" id="shotmissed" value="missed">
+                        <label for="shotmissed">Missed</label> 
+                        <input type="radio" name="shotmade" id="bothmademissed" value="both">
+                        <label for="bothmademissed">Both</label>
+                    </div>
+                </div>
+                <div class="boolean-options">
+                    <span class="boolean-title shotmade">Chart Type</span>
+                    <div class="boolean-category">
+                        <input type="radio" name="charttype" id="scatter" value="scatter">
+                        <label for="scatter">Scatter</label>
+                        <input type="radio" name="charttype" id="heatmap" value="heatmap">
+                        <label for="heatmap">Heatmap</label> 
+                    </div>
+                </div>
+                <div class="form-submit-button">
+                    <button type="submit" value="Show Chart" onclick="validateForm(event)">Show Chart</button>
+                </div>
+            </form>
+        </div>
+        <div class="message">
+            <img src="" alt="" id="chart">
+        </div>
+    </div>
+    <script src="../static/whatever.js"></script>
+</body>
+</html>
